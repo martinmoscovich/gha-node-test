@@ -18,7 +18,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit: main
+          commit: master
           tag: ${{ github.event.milestone.title }}
           body: ${{ steps.create_release_notes.outputs.release_notes }}
 
