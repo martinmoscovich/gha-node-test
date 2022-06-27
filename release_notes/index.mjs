@@ -18,6 +18,9 @@ async function run() {
     context.repo.repo,
     context.payload.milestone.title
   );
+  console.log("Found %d PRs", prs.length);
+
+  console.log(buildReleaseNotes(context.payload.milestone, prs));
 
   core.setOutput(
     "release_notes",
@@ -54,6 +57,12 @@ function generatePRItem(pr) {
 }
 
 async function getPRsForMilestone(owner, repo, milestoneName) {
+  console.log(
+    "Searching for PRs for repo %s/%s - Milestone %s",
+    owner,
+    repo,
+    milestoneName
+  );
   // Graphql query to return the PRs for the milestone
   const query = `query issuesForMilestone($searchQuery: String!) {
                   search(first: 100, type: ISSUE, query: $searchQuery) {
