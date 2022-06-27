@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./release_notes
+        id: create_release_notes
         with:
+          ACTIONS_STEP_DEBUG: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: echo "The output is ${{ steps.create_release_notes.outputs.release_notes }}"
