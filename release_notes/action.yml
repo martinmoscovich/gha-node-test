@@ -1,0 +1,12 @@
+name: "Create Release Notes"
+description: "Creates the Release Notes from a Milestone associated PRs"
+author: "Martin Moscovich"
+
+inputs:
+  github_token:
+    description: "GitHub token"
+    required: true
+
+runs:
+  using: "node16"
+  main: "index.mjs"
