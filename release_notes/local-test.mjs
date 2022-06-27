@@ -7,7 +7,7 @@ const ghToken = "...";
 export function getContextAndGraphQL() {
   // Add the repo owner and name and the milestone data
   const context = {
-    repo: { owner: "", repo: "cid_adidas" },
+    repo: { owner: "", repo: "" },
     payload: { milestone: { title: "", description: "" } },
   };
 
