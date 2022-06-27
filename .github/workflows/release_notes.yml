@@ -1,4 +1,4 @@
-name: Release Notes Test
+name: Release Notes Test with release
 
 on:
   milestone:
