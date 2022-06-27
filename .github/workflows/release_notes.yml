@@ -12,3 +12,5 @@ jobs:
       - uses: ./release_notes
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo "The output is ${{ steps.create_release_notes.outputs.release_notes }}"
