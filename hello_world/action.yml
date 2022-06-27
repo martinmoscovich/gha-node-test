@@ -1,0 +1,7 @@
+name: "Hello World Action"
+description: "Say Hello World"
+author: "Martin Moscovich"
+
+runs:
+  using: "node16"
+  main: "index.js"
