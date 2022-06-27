@@ -14,4 +14,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: echo "The output is ${{ steps.create_release_notes.outputs.release_notes }}"
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit: main
+          tag: ${{ github.event.milestone.title }}
+          body: ${{ steps.create_release_notes.outputs.release_notes }}
+
